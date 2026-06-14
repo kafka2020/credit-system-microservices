@@ -1,0 +1,29 @@
+### Отправить заявку на кредит
+POST http://localhost:8080/api/credit/apply
+Content-Type: application/json
+
+{
+  "amount": 500000,
+  "termMonths": 24,
+  "monthlyIncome": 80000,
+  "currentDebtLoad": 10000,
+  "creditScore": 720
+}
+
+### Отправить заявку — будет отказано (платёж > 50% дохода)
+POST http://localhost:8080/api/credit/apply
+Content-Type: application/json
+
+{
+  "amount": 2000000,
+  "termMonths": 12,
+  "monthlyIncome": 40000,
+  "currentDebtLoad": 25000,
+  "creditScore": 600
+}
+
+### Проверить статус заявки по ID (подставьте реальный ID)
+GET http://localhost:8080/api/credit/status/1
+
+### Проверить статус заявки по ID
+GET http://localhost:8080/api/credit/status/2

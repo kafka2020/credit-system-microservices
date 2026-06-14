@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: credit-processor-service
+
+  kafka:
+    bootstrap-servers: localhost:9092
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: credit_user
+    password: credit_pass
+
+rabbitmq:
+  queue:
+    decision: credit.decision.queue
+
+logging:
+  level:
+    ru.netology: DEBUG
+    org.springframework.kafka: INFO
+    org.springframework.amqp: INFO
